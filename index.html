@@ -73,7 +73,7 @@
 
     <nav class="menu desktop" aria-label="Navegación principal">
 
-      <h1><a href="index.html" itemprop="name">Jesús Daconte</a></h1>
+      <p><a href="index.html" itemprop="name">Jesús Daconte</a></p>
 
       <ul>
         <li><a href="index.html">Inicio</a></li>
@@ -87,12 +87,12 @@
 
     <nav class="menu mobile" aria-label="Navegación móvil">
 
-      <h1><a href="index.html" itemprop="name">Jesús Daconte</a></h1>
+      <p><a href="index.html" itemprop="name">Jesús Daconte</a></p>
 
       <ul>
         <li><a href="index.html" aria-label="Inicio"><i class="fa-solid fa-house"></i></a></li>
         <li><a href="#sobre-mi" aria-label="Sobre mí"><i class="fa-solid fa-user"></i></a></li>
-        <li><a href="#experiencia" aria-label="Experiencia"></i><i class="fa-solid fa-id-card"></i></a></li>
+        <li><a href="#experiencia" aria-label="Experiencia"><i class="fa-solid fa-id-card"></i></a></li>
         <li><a href="#estudios" aria-label="Estudios"><i class="fa-solid fa-graduation-cap"></i></a></li>
         <li><a href="https://wa.me/+573004712909" target="_blank" rel="noopener noreferrer" aria-label="Contacto"><i
               class="fa-solid fa-mobile"></i></a></li>
@@ -112,7 +112,7 @@
 
         <div class="content">
 
-          <h2 id="nombre-titulo" itemprop="name">Jesús Brian Daconte Novoa</h2>
+          <h1 id="nombre-titulo" itemprop="name">Jesús Brian Daconte Novoa</h1>
           <h3 itemprop="jobTitle">Desarrollador Web</h3>
 
           <span>@jesusdaconte</span>
@@ -132,8 +132,6 @@
 
       </div>
 
-      <br><br><br>
-
       <div class="mail">
 
         <a href="mailto:jbdaconte@gmail.com" itemprop="email"><i class="fa-solid fa-envelope"></i>
@@ -144,8 +142,8 @@
 
       <div class="info">
 
-        <span><b>5+</b> Años de experiencia con CMSs</span>
-        <span><b>3+</b> Años de experiencia a código</span>
+        <span><strong>5+</strong> Años de experiencia con CMSs</span>
+        <span><strong>3+</strong> Años de experiencia a código</span>
 
       </div>
 
@@ -160,7 +158,7 @@
 
     <section class="sobre-mi" aria-labelledby="sobre-mi-titulo">
 
-      <h2 id="sobre-mi-titulo" style="display: none;">Sobre mí</h2>
+      <h2 id="sobre-mi-titulo" class="sr-only">Sobre mí</h2>
 
       <p itemprop="description">
         Soy un desarrollador web con 3 años de experiencia en HTML, CSS, JavaScript, PHP y SQL, así como 5 años de
@@ -189,24 +187,21 @@
 
       </a>
 
-      <br>
-
       <p>
 
-        <b>Funciones:</b> <br><br>
-      <ul>
-        <p style="text-align: justify;">Enseñar a los estudiantes a desarrollar sitios web profesionales con HTML5,
-          CSS3, JavaScript, PHP, SQL y el uso de herramientas como Git y Github, además de el uso de sistemas Linux para
-          el proceso de desarrollo.</p>
-      </ul>
-
+        <strong>Funciones:</strong>
       </p>
+      <ul>
+        <li style="text-align: justify;">Enseñar a los estudiantes a desarrollar sitios web profesionales con HTML5,
+          CSS3, JavaScript, PHP, SQL y el uso de herramientas como Git y Github, además de el uso de sistemas Linux para
+          el proceso de desarrollo.</li>
+      </ul>
 
     </section>
 
     <section class="experiencia" aria-labelledby="experiencia-brand">
 
-      <h2 id="experiencia-brand" style="display: none;">Experiencia en Brand Colombia</h2>
+      <h2 id="experiencia-brand" class="sr-only">Experiencia en Brand Colombia</h2>
 
       <a class="mas-exp" href="https://www.linkedin.com/company/brand-colombia/posts/?feedView=all" target="_blank"
         rel="noopener noreferrer" itemscope itemtype="https://schema.org/Organization">
@@ -217,11 +212,10 @@
 
       </a>
 
-      <br>
-
       <p>
 
-        <b>Funciones:</b> <br><br>
+        <strong>Funciones:</strong>
+      </p>
       <ul>
         <li>Construcción del sitio web principal</li>
         <li>creación de nuevas características para el sitio web principal y demás sitios web pertenecientes a la
@@ -234,22 +228,16 @@
         <li>Creación de landings para campañas de SEM</li>
       </ul>
 
-      </p>
-
     </section>
 
     <section class="estudios" id="estudios" aria-labelledby="estudios-titulo">
 
       <h2 id="estudios-titulo">Educación y Certificaciones</h2>
 
-      <p>
-
-      <h3>Educación:</h3> <br>
-      <b>cursos</b>
-
-      <br><br>
-
-      </p>
+      
+      <h3>Educación:</h3>
+      <h3>Cursos</h3>
+      
 
       <div class="educacion" itemscope itemtype="https://schema.org/ItemList">
 
@@ -362,14 +350,8 @@
 
       </div>
 
-      <br><br>
-
       <p>
-
-        <b>Cursos Técnicos</b>
-
-        <br><br><br>
-
+        <strong>Cursos Técnicos</strong>
       </p>
 
       <div class="educacion Tecnicos" itemscope itemtype="https://schema.org/ItemList">
@@ -394,16 +376,13 @@
 
     </section>
 
-    <br>
-
   </main>
 
   <footer role="contentinfo">
 
-    <p id="ano">
-
-      © 2019 - <span id="current-year">2024</span>. Jesús Daconte. <br> Todos los derechos reservados.
-
+    <p id="footer-text">
+      <span>© 2019 - <span id="current-year">2024</span>. Jesús Daconte.</span>
+      <span>Todos los derechos reservados.</span>
     </p>
 
   </footer>
