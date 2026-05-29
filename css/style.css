@@ -78,17 +78,6 @@
         
         nav ul li a.active {
             color: var(--primary);
-            position: relative;
-        }
-
-        nav ul li a.active::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: var(--primary);
         }
         
         /* Mobile navigation toggle */
@@ -195,10 +184,29 @@
             color: var(--foreground);
             font-size: 0.95rem;
             transition: color 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
         }
 
         nav ul li a:hover {
             color: var(--primary);
+        }
+
+        nav ul li a:hover::after,
+        nav ul li a.active::after,
+        nav ul li a:focus-visible::after {
+            width: 100%;
         }
 
         nav ul li a:focus-visible {
@@ -282,8 +290,11 @@
         }
 
         .hero-content h1 span {
-            color: var(--primary);
             font-style: italic;
+            background: linear-gradient(to right, var(--primary), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .hero-content .description {
@@ -372,6 +383,11 @@
             object-fit: cover;
             border-radius: 1.5rem;
             border: 3px solid var(--primary);
+            transition: transform 0.5s ease;
+        }
+
+        .hero-image-wrapper:hover img {
+            transform: scale(1.05);
         }
 
         /* Stats Section */
@@ -422,6 +438,24 @@
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+        .section-title:hover::after {
+            width: 80px;
         }
 
         /* About Section */
@@ -478,6 +512,22 @@
             color: var(--muted-foreground);
             margin-top: 2rem;
             font-size: 0.95rem;
+        }
+
+        /* Common card transitions */
+        .experience-card,
+        .cert-card,
+        .contact-form-wrapper,
+        .contact-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .experience-card:hover,
+        .cert-card:hover,
+        .contact-form-wrapper:hover,
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
         }
 
         /* Experience Section */
@@ -628,7 +678,8 @@
             border-color: var(--primary);
             color: var(--primary);
             background-color: rgba(20, 184, 166, 0.1);
-            transform: translateY(-2px);
+            transform: scale(1.05) rotate(-2deg);
+            box-shadow: 0 5px 15px rgba(20, 184, 166, 0.2);
         }
         
         /* Group skills with subtle dividers */
@@ -718,6 +769,11 @@
             height: 100px;
             object-fit: cover;
             border-bottom: 1px solid var(--border);
+            transition: transform 0.5s ease;
+        }
+
+        .cert-card:hover .cert-image {
+            transform: scale(1.05);
         }
 
         .cert-content {
@@ -943,112 +999,6 @@
             font-size: 0.875rem;
         }
 
-        /* Additional CSS Effects */
-        
-        /* Smooth scale on hover for cards */
-        .experience-card,
-        .cert-card,
-        .contact-form-wrapper,
-        .contact-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .experience-card:hover,
-        .cert-card:hover,
-        .contact-form-wrapper:hover,
-        .contact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-        }
-        
-        /* Subtle animation for section titles */
-        .section-title {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 3rem;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -10px;
-            width: 60px;
-            height: 4px;
-            background: var(--primary);
-            border-radius: 2px;
-            transition: width 0.3s ease;
-        }
-        
-        .section-title:hover::after {
-            width: 80px;
-        }
-        
-        /* Gradient text effect for hero */
-        .hero-content h1 span {
-            background: linear-gradient(to right, var(--primary), var(--primary-light));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        /* Button hover lift */
-        .btn-primary,
-        .btn-outline,
-        .nav-btn {
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-        
-        .btn-primary:hover,
-        .btn-outline:hover,
-        .nav-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(20, 184, 166, 0.3);
-        }
-        
-        /* Nav link underline animation */
-        nav ul li a {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -5px;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: width 0.3s ease;
-        }
-        
-        nav ul li a:hover::after,
-        nav ul li a.active::after,
-        nav ul li a:focus-visible::after {
-            width: 100%;
-        }
-        
-        /* Image hover effect */
-        .hero-image-wrapper img,
-        .cert-image {
-            transition: transform 0.5s ease;
-        }
-        
-        .hero-image-wrapper:hover img,
-        .cert-card:hover .cert-image {
-            transform: scale(1.05);
-        }
-        
-        /* Skill badge pulse on hover */
-        .skill-badge {
-            transition: all 0.3s ease;
-        }
-        
-        .skill-badge:hover {
-            transform: scale(1.05) rotate(-2deg);
-            box-shadow: 0 5px 15px rgba(20, 184, 166, 0.2);
-        }
         
 /* Page entrance animation for content below the fold - hero/nav excluded for LCP */
 body > header,
