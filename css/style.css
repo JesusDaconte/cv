@@ -1050,8 +1050,7 @@
             box-shadow: 0 5px 15px rgba(20, 184, 166, 0.2);
         }
         
-/* Page entrance animation for main content */
-body > nav,
+/* Page entrance animation for content below the fold - hero/nav excluded for LCP */
 body > header,
 body > main,
 body > section,
@@ -1061,16 +1060,24 @@ body > footer {
     animation: fadeInUp 0.6s ease forwards;
 }
 
-body > nav { animation-delay: 0.1s; }
-body > header { animation-delay: 0.2s; }
-body > main { animation-delay: 0.3s; }
-body > section:nth-of-type(1) { animation-delay: 0.4s; }
-body > section:nth-of-type(2) { animation-delay: 0.5s; }
-body > section:nth-of-type(3) { animation-delay: 0.6s; }
-body > section:nth-of-type(4) { animation-delay: 0.7s; }
-body > section:nth-of-type(5) { animation-delay: 0.8s; }
-body > section:nth-of-type(6) { animation-delay: 0.9s; }
-body > footer { animation-delay: 1.0s; }
+body > header { animation-delay: 0.1s; }
+body > main { animation-delay: 0.2s; }
+body > section:nth-of-type(1) { animation-delay: 0.3s; }
+body > section:nth-of-type(2) { animation-delay: 0.4s; }
+body > section:nth-of-type(3) { animation-delay: 0.5s; }
+body > section:nth-of-type(4) { animation-delay: 0.6s; }
+body > section:nth-of-type(5) { animation-delay: 0.7s; }
+body > section:nth-of-type(6) { animation-delay: 0.8s; }
+body > footer { animation-delay: 0.9s; }
+
+/* Nav and hero sections must render immediately for LCP */
+body > nav,
+body > section.hero,
+body > header.portfolio-hero {
+    opacity: 1;
+    transform: none;
+    animation: none;
+}
 
 /* Floating WhatsApp Button - Critical Styles */
 .whatsapp-float {
