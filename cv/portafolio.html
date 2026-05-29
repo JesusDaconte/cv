@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafolio de proyectos web y de inteligencia artificial. Soluciones escalables, rápidas e inteligentes en Santa Marta, Colombia.">
+    <meta property="og:title" content="Portafolio - JD - SEO Developer & AI Engineer">
+    <meta property="og:description" content="Proyectos web, CMS, y de IA organizados por categorías. Soluciones escalables, rápidas e inteligentes.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jesusdaconte.github.io/cv/portafolio.html">
+    <meta property="og:image" content="https://jesusdaconte.github.io/cv/img/jesus-daconte-seo-developer-ai-engineer.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Portafolio - JD - SEO Developer & AI Engineer">
+    <meta name="twitter:description" content="Proyectos web, CMS, y de IA organizados por categorías. Soluciones escalables, rápidas e inteligentes.">
+    <meta name="twitter:image" content="https://jesusdaconte.github.io/cv/img/jesus-daconte-seo-developer-ai-engineer.webp">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://jesusdaconte.github.io/cv/portafolio.html">
+    <title>Portafolio - JD - SEO Developer & AI Engineer</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%2314b8a6'/><text x='16' y='22' font-size='16' font-weight='bold' text-anchor='middle' fill='%230d0d12' font-family='system-ui'>JD</text></svg>">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Portfolio Specific Styles */
+        .portfolio-hero {
+            padding: 140px 0 60px;
+            text-align: center;
+            background: radial-gradient(circle at top, rgba(20, 184, 166, 0.08) 0%, transparent 60%);
+        }
+        
+        .portfolio-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -0.025em;
+            color: var(--foreground);
+        }
+        
+        .portfolio-hero h1 span {
+            background: linear-gradient(to right, var(--primary), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .portfolio-hero p {
+            color: var(--muted-foreground);
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Tabs Section */
+        .portfolio-tabs-container {
+            padding: 20px 0 80px;
+        }
+        
+        .portfolio-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+        
+        .tab-btn {
+            background: var(--card);
+            border: 1px solid var(--border);
+            color: var(--muted-foreground);
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .tab-btn:hover {
+            border-color: var(--primary);
+            color: var(--foreground);
+            transform: translateY(-1px);
+        }
+        
+        .tab-btn.active {
+            background: var(--primary);
+            color: #0d0d12;
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(20, 184, 166, 0.25);
+        }
+
+        .tab-btn:focus-visible {
+            outline: 2px solid var(--primary-light);
+            outline-offset: 2px;
+        }
+
+        /* Portfolio Grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        @media (min-width: 640px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Project Card */
+        .project-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 1.25rem;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.25);
+            border-color: var(--primary);
+        }
+        
+        .project-img-wrapper {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+            background: var(--muted);
+        }
+        
+        .project-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            transition: transform 0.5s ease, object-position 4s ease;
+        }
+        
+        .project-card:hover .project-img {
+            transform: scale(1.05);
+            object-position: 50% 100%;
+        }
+        
+        .project-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(13, 13, 18, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            color: var(--primary-light);
+            border: 1px solid rgba(20, 184, 166, 0.3);
+            padding: 0.35rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .project-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        
+        .project-content h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--foreground);
+            line-height: 1.3;
+        }
+        
+        .project-content p {
+            color: var(--muted-foreground);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-tag {
+            background: var(--muted);
+            color: var(--foreground);
+            padding: 0.25rem 0.6rem;
+            border-radius: 0.375rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 0.75rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-align: center;
+            background: var(--muted);
+            color: var(--foreground);
+            border: 1px solid var(--border);
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+        
+        .project-card:hover .project-link {
+            background: var(--primary);
+            color: #0d0d12;
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(20, 184, 166, 0.2);
+        }
+
+        /* CTA Section inside Portfolio */
+        .portfolio-cta {
+            background: linear-gradient(135deg, rgba(20, 184, 166, 0.05) 0%, rgba(13, 148, 136, 0.02) 100%);
+            border: 1px solid var(--border);
+            border-radius: 1.5rem;
+            padding: 3rem;
+            text-align: center;
+            margin-top: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .portfolio-cta h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--foreground);
+        }
+        
+        .portfolio-cta p {
+            color: var(--muted-foreground);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            font-size: 1.05rem;
+        }
+
+        /* Filter animation classes */
+        .project-card {
+            opacity: 1;
+            transform: scale(1);
+            transition: opacity 0.3s ease, transform 0.3s ease, border-color 0.3s, box-shadow 0.3s;
+        }
+        
+        .project-card.hide {
+            display: none;
+        }
+        
+        .project-card.show {
+            display: flex;
+            animation: cardFadeIn 0.4s ease forwards;
+        }
+
+        @keyframes cardFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px) scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Saltar al contenido principal</a>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo" aria-label="Volver al inicio">JD</a>
+            <div class="nav-toggle" id="navToggle" aria-label="Abrir menú de navegación">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="navMenu">
+                <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+                <li><a href="index.html#experiencia">Experiencia</a></li>
+                <li><a href="index.html#habilidades">Habilidades</a></li>
+                <li><a href="portafolio.html" class="active" aria-current="page">Portafolio</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+            </ul>
+            <a href="index.html#contacto" class="nav-btn">Hablemos</a>
+        </div>
+    </nav>
+
+    <main id="main-content">
+    <!-- Hero Section -->
+    <header class="portfolio-hero">
+        <div class="container">
+            <h1>Mi <span>Portafolio</span></h1>
+            <p>
+                Una selección de proyectos web y de inteligencia artificial organizados por categorías. Soluciones escalables, rápidas e inteligentes.
+            </p>
+        </div>
+    </header>
+
+    <!-- Portfolio Section with Tabs -->
+    <section class="portfolio-tabs-container">
+        <div class="container">
+            <!-- Navigation Tabs -->
+            <div class="portfolio-tabs">
+                <button class="tab-btn active" data-filter="all">Todos</button>
+                <button class="tab-btn" data-filter="clientes-cms">Clientes CMS</button>
+                <button class="tab-btn" data-filter="clientes-code">Clientes Code</button>
+                <button class="tab-btn" data-filter="proyectos-code">Proyectos Code</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="portfolio-grid" id="portfolioGrid">
+
+                <!-- === CLIENTES CMS === -->
+                <div class="project-card" data-category="clientes-cms">
+                    <div class="project-img-wrapper">
+                        <img src="img/clientes/sitio-web-ancestrails.webp" alt="Captura del sitio web AncesTrails - Tours a Ciudad Perdida" class="project-img" loading="lazy" width="600" height="2460">
+                        <span class="project-badge">Clientes CMS</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>AncesTrails</h3>
+                        <p>Agencia de ecoturismo y etnoturismo especializada en tours a Ciudad Perdida y expediciones por la Sierra Nevada de Santa Marta. Trabajo directo con comunidades Kogui, Arhuaco y Wiwa.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">WordPress</span>
+                            <span class="project-tag">Elementor</span>
+                            <span class="project-tag">SEO Turismo</span>
+                            <span class="project-tag">Ecoturismo</span>
+                        </div>
+                        <a href="https://ancestrails.com/" target="_blank" rel="noopener noreferrer" class="project-link">
+                            Ver Proyecto
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="clientes-cms">
+                    <div class="project-img-wrapper">
+                        <img src="img/clientes/sitio-web-visionarios-magdalena.webp" alt="Captura del sitio web Visionarios Magdalena - CTeI" class="project-img" loading="lazy" width="600" height="1321">
+                        <span class="project-badge">Clientes CMS</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Visionarios Magdalena</h3>
+                        <p>Plataforma del Sistema Territorial de Ciencia, Tecnología e Innovación del Magdalena. Portal institucional con información sobre el plan de desarrollo departamental con miras al 2040.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">WordPress</span>
+                            <span class="project-tag">Landing Page</span>
+                            <span class="project-tag">SEO Institucional</span>
+                            <span class="project-tag">Gobierno</span>
+                        </div>
+                        <a href="https://visionariosmagdalena.com/" target="_blank" rel="noopener noreferrer" class="project-link">
+                            Ver Proyecto
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="clientes-cms">
+                    <div class="project-img-wrapper">
+                        <img src="img/clientes/sitio-web-elysium-construcciones.webp" alt="Captura del sitio web Elysium Construcciones - Arquitectura" class="project-img" loading="lazy" width="600" height="1295">
+                        <span class="project-badge">Clientes CMS</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Elysium Construcciones</h3>
+                        <p>Sitio corporativo para empresa de diseño, arquitectura y construcción. Portal inmobiliario con galería de proyectos, login de clientes y servicios especializados de ingeniería.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">WordPress</span>
+                            <span class="project-tag">Real Estate</span>
+                            <span class="project-tag">Elementor</span>
+                            <span class="project-tag">Estatik</span>
+                        </div>
+                        <a href="https://elysiumconstrucciones.com/" target="_blank" rel="noopener noreferrer" class="project-link">
+                            Ver Proyecto
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="clientes-cms">
+                    <div class="project-img-wrapper">
+                        <img src="img/clientes/sitio-web-trekking-santa-marta.webp" alt="Captura del sitio web Trekking Santa Marta - Rutas Sierra Nevada" class="project-img" loading="lazy" width="600" height="1813">
+                        <span class="project-badge">Clientes CMS</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Trekking Santa Marta</h3>
+                        <p>Operador turístico con rutas exclusivas en la Sierra Nevada. Sistema de reservas en línea, tours a Ciudad Perdida y experiencias de montaña con guías locales certificados.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">WordPress</span>
+                            <span class="project-tag">WooCommerce</span>
+                            <span class="project-tag">SEO Local</span>
+                            <span class="project-tag">Turismo</span>
+                        </div>
+                        <a href="https://trekkingsantamarta.com/" target="_blank" rel="noopener noreferrer" class="project-link">
+                            Ver Proyecto
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- === CLIENTES CODE === -->
+                <div class="project-card" data-category="clientes-code">
+                    <div class="project-img-wrapper">
+                        <img src="img/clientes/sitio-web-construcciones-hf.webp" alt="Captura del sitio web Construcciones HF - Ingeniería Civil" class="project-img" loading="lazy" width="600" height="2974">
+                        <span class="project-badge">Clientes Code</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Construcciones HF S.A.S.</h3>
+                        <p>Landing page corporativa para empresa de ingeniería civil y construcción residencial en Barranquilla. Catálogo de proyectos destacados, servicios especializados y sistema de cotización.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">Landing Page</span>
+                        </div>
+                        <a href="https://construccioneshf.com/" target="_blank" rel="noopener noreferrer" class="project-link">
+                            Ver Proyecto
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- === PROYECTOS CODE === -->
+                <div class="project-card" data-category="proyectos-code">
+                    <div class="project-img-wrapper">
+                        <img src="img/proyectos/proyecto-grand-marina-suites.webp" alt="Captura del proyecto Grand Marina Suites - Sitio web completo" class="project-img" loading="lazy" width="600" height="2925">
+                        <span class="project-badge">Proyectos Code</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Grand Marina Suites</h3>
+                        <p>Sitio web para complejo de apartasuites frente al mar en Santa Marta. Diseño moderno con galería interactiva, catálogo de suites y sistema de reservas integrado.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">Sitio Web</span>
+                        </div>
+                        <a href="https://jesusdaconte.github.io/GrandMarina/" target="_blank" rel="noopener noreferrer" class="project-link">
+                            Ver Proyecto
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="proyectos-code">
+                    <div class="project-img-wrapper">
+                        <img src="img/proyectos/proyecto-coworking-nomaland.webp" alt="Captura del proyecto Coworking Nomaland - Sitio web completo" class="project-img" loading="lazy" width="600" height="1405">
+                        <span class="project-badge">Proyectos Code</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Coworking Nomaland</h3>
+                        <p>Sitio web para espacio de coworking en Santa Marta dirigido a nómadas digitales. Diseño fresco con secciones de servicios, membresías y comunidad de emprendedores.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">Sitio Web</span>
+                        </div>
+                        <a href="https://jesusdaconte.github.io/Nomaland/" target="_blank" rel="noopener noreferrer" class="project-link">
+                            Ver Proyecto
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="proyectos-code">
+                    <div class="project-img-wrapper">
+                        <img src="img/proyectos/proyecto-arteta-forero-abogados.webp" alt="Captura del proyecto Arteta y Forero - Firma de abogados" class="project-img" loading="lazy" width="1200" height="2248">
+                        <span class="project-badge">Proyectos Code</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Arteta & Forero</h3>
+                        <p>Sitio web corporativo para firma de abogados en Bogotá con más de 20 años de trayectoria. Sistema de agendamiento de consultas en línea y presentación de áreas de práctica.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">Sitio Web</span>
+                        </div>
+                        <a href="https://jesusdaconte.github.io/Arteta_y_Forero/" target="_blank" rel="noopener noreferrer" class="project-link">
+                            Ver Proyecto
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="proyectos-code">
+                    <div class="project-img-wrapper">
+                        <img src="img/proyectos/proyecto-yt-music-player.webp" alt="Captura del proyecto YT Music Player - Reproductor de YouTube" class="project-img" loading="lazy" width="1200" height="586">
+                        <span class="project-badge">Proyectos Code</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>YT Music Player</h3>
+                        <p>Reproductor de música basado en YouTube. Agrega videos, crea listas de reproducción personalizadas y disfruta de tu música favorita desde una interfaz limpia y funcional.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">YouTube API</span>
+                        </div>
+                        <a href="https://jesusdaconte.github.io/Reproductor/" target="_blank" rel="noopener noreferrer" class="project-link">
+                            Ver Proyecto
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Call to Action Banner -->
+            <div class="portfolio-cta">
+                <h2>¿Tienes una idea innovadora?</h2>
+                <p>Escríbeme para estructurar un sitio dinámico, optimizar el rendimiento técnico de tu web o implementar automatizaciones y agentes de Inteligencia Artificial a la medida.</p>
+                <a href="index.html#contacto" class="btn-primary" style="display: inline-flex; max-width: max-content; margin: 0 auto;">Iniciar conversación →</a>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2019 - 2026. Jesús Daconte. Todos los derechos reservados.</p>
+            <p>Desarrollado con HTML, CSS y mucho <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle;"><path d="M2 21l4-4 2 2 4-4 2 2 4-4v6l-4 4-2-2-4 4-2-2-4 4-2-2-4 4-2-2-4 4z"/><path d="M20 5l-4 4-2-2-4 4-2-2-4 4V3l4-4 2 2 4-4 2 2 4-4 2 2 4-4 4 4v4l-4 4 2 2 4-4 2 2 4-4z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/573004712909?text=Hola%20Jes%C3%BAs,%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20contactarte." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.413 9.863-9.847.002-2.63-1.023-5.101-2.883-6.963C16.59 1.931 14.111.905 11.48.905c-5.441 0-9.865 4.414-9.868 9.848-.001 1.77.463 3.5 1.345 5.023L1.921 20.35l4.726-1.196zm12.35-7.3c-.3-.15-1.771-.875-2.046-.975-.275-.1-.475-.15-.675.15-.2.3-.775.975-.95 1.175-.175.2-.35.225-.65.075-1.201-.6-2.043-1.054-2.855-2.45-.21-.36.21-.33.6-.11.11.06.22.13.3.19.29.29.3.43.43.71.13.27.06.51-.03.68-.09.18-.775 1.865-.95 2.285-.17.41-.35.34-.48.34-.11 0-.25 0-.4-.01-.15-.01-.38-.05-.58-.27-.2-.22-.775-.75-.775-1.83 0-1.08.788-2.13.963-2.36.175-.23 1.55-2.368 3.754-3.32.524-.226 1.05-.333 1.5-.325.53.01 1.5.25 1.5.25.325-.05.52-.22.52-.22s.22-.05.35-.05c.13 0 .2.02.2.02s.1.03.15.05c.05.02.13.05.13.05.15.1.28.27.28.45 0 .22-.08.6-.25 1.05z" />
+        </svg>
+    </a>
+
+    <!-- Scripts -->
+    <script src="js/main.js" defer></script>
+    <script>
+        // Interactive Tab Filter logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    button.classList.add('active');
+
+                    const filterValue = button.getAttribute('data-filter');
+
+                    projectCards.forEach(card => {
+                        const cardCategory = card.getAttribute('data-category');
+
+                        if (filterValue === 'all' || cardCategory === filterValue) {
+                            card.classList.remove('hide');
+                            card.classList.add('show');
+                        } else {
+                            card.classList.remove('show');
+                            card.classList.add('hide');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
