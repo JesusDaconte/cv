@@ -72,7 +72,9 @@ if (contactForm) {
         const email = formData.get('email');
         const mensaje = formData.get('mensaje');
 
-        const text = `Hola Jesús, mi nombre es *${nombre}*.\n\n*Celular:* ${celular}\n*Email:* ${email}\n\n*Mensaje:*\n${mensaje}`;
+        const text = document.documentElement.lang === 'en'
+            ? `Hi Jesús, my name is *${nombre}*.\n\n*Phone:* ${celular}\n*Email:* ${email}\n\n*Message:*\n${mensaje}`
+            : `Hola Jesús, mi nombre es *${nombre}*.\n\n*Celular:* ${celular}\n*Email:* ${email}\n\n*Mensaje:*\n${mensaje}`;
         const whatsappUrl = `https://wa.me/573004712909?text=${encodeURIComponent(text)}`;
 
         window.open(whatsappUrl, '_blank');

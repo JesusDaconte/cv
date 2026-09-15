@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Jesús Brian Daconte Novoa - CV</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @page { size: A4; margin: 0; }
+  :root {
+    --side: #0e2a33;
+    --side-2: #134e4a;
+    --accent: #2dd4bf;
+    --accent-dark: #0d9488;
+    --ink: #1c1c1e;
+    --gray: #5b5b5b;
+    --line: #e5e7eb;
+  }
+  html, body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, Roboto, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); font-size: 9pt; line-height: 1.42; background: #fff; }
+  .sheet { display: flex; width: 210mm; height: 297mm; margin: 0 auto; overflow: hidden; }
+
+  /* ============ SIDEBAR ============ */
+  .sidebar { width: 66mm; flex-shrink: 0; background: linear-gradient(180deg, var(--side) 0%, var(--side-2) 100%); color: #e8f4f2; padding: 22px 16px 14px; }
+  .photo-wrap { text-align: center; }
+  .photo-wrap img { width: 112px; height: 112px; object-fit: cover; border-radius: 50%; border: 3px solid var(--accent); }
+  .side-name { text-align: center; font-size: 12pt; font-weight: 800; line-height: 1.25; margin-top: 10px; }
+  .side-role { text-align: center; font-size: 8pt; color: var(--accent); font-weight: 600; margin-top: 5px; }
+  .side-block { margin-top: 18px; }
+  .side-block h3 { font-size: 8pt; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); border-bottom: 1px solid rgba(45,212,191,.4); padding-bottom: 5px; margin-bottom: 9px; }
+  .side-block ul { list-style: none; }
+  .side-block li { font-size: 8.5pt; line-height: 1.5; margin-bottom: 6px; }
+  .side-block a { color: #fff; text-decoration: none; word-break: break-all; }
+  .contact-li { display: flex; gap: 6px; align-items: flex-start; }
+  .contact-li .ico { flex-shrink: 0; width: 14px; text-align: center; }
+  .skill-cat { font-size: 8.5pt; font-weight: 700; color: var(--accent); margin: 9px 0 5px; }
+  .pills { display: flex; flex-wrap: wrap; gap: 6px; }
+  .pill { background: rgba(45,212,191,.14); border: 1px solid rgba(45,212,191,.45); color: #eafffb; border-radius: 12px; padding: 1px 9px; font-size: 8pt; font-weight: 600; line-height: 1.5; }
+  .lang { margin-bottom: 10px; }
+  .lang-top { display: flex; justify-content: space-between; font-size: 8.5pt; font-weight: 600; }
+  .bar { height: 4px; background: rgba(255,255,255,.18); border-radius: 3px; margin-top: 5px; }
+  .bar span { display: block; height: 4px; background: var(--accent); border-radius: 3px; }
+  .cert-side { font-size: 8.5pt; margin-bottom: 6px; line-height: 1.45; }
+  .cert-side strong { color: #fff; font-size: 8.5pt; }
+  .cert-side em { font-style: normal; color: #9fd8d1; font-size: 8pt; }
+
+  /* ============ MAIN ============ */
+  .main { flex: 1; padding: 24px 22px 16px; }
+  .main h1 { font-size: 22pt; font-weight: 800; letter-spacing: -.5px; line-height: 1.1; }
+  .main h1 span { color: var(--accent-dark); }
+  .main .headline { font-size: 10.5pt; font-weight: 700; color: var(--accent-dark); margin-top: 5px; }
+  .main .loc { font-size: 9pt; color: var(--gray); margin-top: 3px; }
+  section { margin-top: 19px; }
+  section h2 { font-size: 9.5pt; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-dark); border-bottom: 2px solid var(--accent-dark); padding-bottom: 5px; margin-bottom: 10px; }
+  .summary { font-size: 9pt; line-height: 1.6; color: #333; }
+  .job { margin-bottom: 13px; }
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+  .job-role { font-size: 10pt; font-weight: 700; }
+  .job-date { font-size: 8.5pt; color: var(--gray); white-space: nowrap; }
+  .job-co { font-size: 9.5pt; font-weight: 700; color: var(--accent-dark); margin-top: 2px; }
+  .job-loc { font-size: 8.5pt; color: var(--gray); }
+  .main ul { margin: 5px 0 0 16px; }
+  .main li { margin-bottom: 3px; line-height: 1.55; }
+  .proj { margin-bottom: 10px; line-height: 1.5; }
+  .proj-name { font-weight: 700; font-size: 10pt; }
+  .proj-name a { color: var(--accent-dark); text-decoration: none; }
+  .proj-tech { font-size: 8pt; color: var(--gray); font-style: italic; }
+  .more { font-size: 9pt; color: var(--gray); margin-top: 5px; }
+  .more a { color: var(--accent-dark); }
+  footer { margin-top: 18px; padding-top: 10px; border-top: 1px solid var(--line); font-size: 8pt; color: var(--gray); display: flex; justify-content: space-between; }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <!-- ================= LATERAL ================= -->
+  <aside class="sidebar">
+    <div class="photo-wrap">
+      <img src="img/jesus-daconte-seo-developer-ai-engineer.webp" alt="Foto de Jesús Brian Daconte Novoa">
+    </div>
+    <div class="side-name">Jesús Brian<br>Daconte Novoa</div>
+    <div class="side-role">SEO Técnico · Desarrollo Web</div>
+
+    <div class="side-block">
+      <h3>Contacto</h3>
+      <ul>
+        <li class="contact-li"><span class="ico">✉️</span><a href="mailto:jbdaconte@gmail.com">jbdaconte@gmail.com</a></li>
+        <li class="contact-li"><span class="ico">📞</span><a href="tel:+573004712909">+57 300 471 2909</a></li>
+        <li class="contact-li"><span class="ico">📍</span><span>Santa Marta, Colombia · Remoto</span></li>
+        <li class="contact-li"><span class="ico">🔗</span><a href="https://www.linkedin.com/in/jesus-brian-daconte-novoa/">/in/jesus-brian-daconte-novoa</a></li>
+        <li class="contact-li"><span class="ico">💻</span><a href="https://github.com/JesusDaconte">github.com/JesusDaconte</a></li>
+        <li class="contact-li"><span class="ico">🌐</span><a href="https://jesusdaconte.github.io/cv/">jesusdaconte.github.io/cv</a></li>
+      </ul>
+    </div>
+
+    <div class="side-block">
+      <h3>Habilidades</h3>
+      <div class="skill-cat">SEO Técnico</div>
+      <div class="pills">
+        <span class="pill">Core Web Vitals 90+</span>
+        <span class="pill">Schema Markup</span>
+        <span class="pill">SEO Técnico</span>
+        <span class="pill">Mobile-First</span>
+        <span class="pill">WebP / AVIF</span>
+        <span class="pill">Optimización CSS/JS</span>
+      </div>
+      <div class="skill-cat">Desarrollo</div>
+      <div class="pills">
+        <span class="pill">WordPress</span>
+        <span class="pill">HTML5</span>
+        <span class="pill">CSS3</span>
+        <span class="pill">JavaScript</span>
+        <span class="pill">PHP</span>
+        <span class="pill">SQL</span>
+        <span class="pill">Astro</span>
+        <span class="pill">Capacitor</span>
+        <span class="pill">Supabase</span>
+        <span class="pill">Firebase</span>
+        <span class="pill">Git &amp; GitHub</span>
+        <span class="pill">Linux · CI/CD</span>
+        <span class="pill">Gemini / MCPs</span>
+      </div>
+    </div>
+
+    <div class="side-block">
+      <h3>Idiomas</h3>
+      <div class="lang">
+        <div class="lang-top"><span>Español</span><span>Nativo</span></div>
+        <div class="bar"><span style="width:100%"></span></div>
+      </div>
+      <div class="lang">
+        <div class="lang-top"><span>Inglés</span><span>Certificado</span></div>
+        <div class="bar"><span style="width:65%"></span></div>
+      </div>
+    </div>
+
+    <div class="side-block">
+      <h3>Certificaciones</h3>
+      <div class="cert-side"><strong>Desarrollador WordPress</strong> · <em>LinkedIn Learning</em></div>
+      <div class="cert-side"><strong>Análisis de Datos</strong> · <em>Microsoft / LinkedIn</em></div>
+      <div class="cert-side"><strong>Desarrollo de Software</strong> · <em>Microsoft / LinkedIn</em></div>
+      <div class="cert-side"><strong>Cloud Digital Leader</strong> · <em>Google Cloud / Platzi</em></div>
+      <div class="cert-side"><strong>Desarrollo Frontend</strong> · <em>Platzi</em></div>
+      <div class="cert-side"><strong>GitHub para Programadores</strong> · <em>Platzi</em></div>
+      <div class="cert-side"><strong>Administración de Servidores</strong> · <em>Platzi</em></div>
+      <div class="cert-side"><strong>JavaScript · PHP · SQL</strong> · <em>SoloLearn</em></div>
+      <div class="cert-side"><strong>Inglés</strong> · <em>Certificado</em></div>
+    </div>
+  </aside>
+
+  <!-- ================= CONTENIDO ================= -->
+  <div class="main">
+    <h1>Jesús Brian <span>Daconte Novoa</span></h1>
+    <div class="headline">Especialista en SEO Técnico y Desarrollo Web</div>
+    <div class="loc">5+ años como docente-desarrollador · Santa Marta, Colombia</div>
+
+    <section>
+      <h2>Perfil</h2>
+      <p class="summary">
+        Reconstruyo webs lentas en experiencias ultrarrápidas de <strong>90+ PageSpeed</strong>:
+        Core Web Vitals, Schema Markup, jerarquía HTML y mobile-first. Full-stack en
+        <strong>WordPress, HTML, CSS, JavaScript, PHP y SQL</strong>; desarrollo moderno con
+        <strong>Astro y Capacitor</strong>. Uso IA (Gemini, MCPs) para automatizar auditorías 10× más rápido.
+      </p>
+    </section>
+
+    <section>
+      <h2>Experiencia</h2>
+      <div class="job">
+        <div class="job-head">
+          <div class="job-role">Maestro de Desarrollo Web</div>
+          <div class="job-date">Mar 2021 — Presente</div>
+        </div>
+        <div class="job-co">COTEMAG · <span class="job-loc">Santa Marta, Colombia</span></div>
+        <ul>
+          <li>Formación web profesional: HTML5, CSS3, JavaScript, PHP y SQL; Git, GitHub y Linux.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <div class="job-head">
+          <div class="job-role">Desarrollador Web</div>
+          <div class="job-date">Mar 2022 — Dic 2022</div>
+        </div>
+        <div class="job-co">BRAND COLOMBIA · <span class="job-loc">Santa Marta, Colombia</span></div>
+        <ul>
+          <li>Funcionalidades para sitio principal y clientes; mantenimiento web y servidor; CI/CD y landings SEM.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Proyectos destacados</h2>
+      <div class="proj">
+        <div class="proj-name">🌴 Santa Marta Guía — <a href="https://santamartaguia.com/">santamartaguia.com</a> <span style="font-weight:400;color:#5b5b5b;">(personal)</span></div>
+        <div>Guía bilingüe ES/EN: 72 lugares verificados, blog, buscador, itinerarios y PWA.</div>
+        <div class="proj-tech">HTML · CSS · JS · PWA · Schema · Sitemap 1500+ URLs · hreflang · Playwright</div>
+      </div>
+      <div class="proj">
+        <div class="proj-name">🏔️ AncesTrails — <a href="https://ancestrails.com/">ancestrails.com</a> <span style="font-weight:400;color:#5b5b5b;">(cliente)</span></div>
+        <div>Ecoturismo a Ciudad Perdida: WordPress + Elementor con SEO turístico.</div>
+        <div class="proj-tech">WordPress · Elementor · SEO Turismo</div>
+      </div>
+      <div class="proj">
+        <div class="proj-name">🏗️ Construcciones HF — <a href="https://construccioneshf.com/">construccioneshf.com</a> <span style="font-weight:400;color:#5b5b5b;">(cliente)</span></div>
+        <div>Landing de ingeniería civil con catálogo de proyectos y cotización.</div>
+        <div class="proj-tech">HTML · CSS · JavaScript · Landing Page</div>
+      </div>
+      <div class="proj">
+        <div class="proj-name">🏛️ Visionarios Magdalena — <a href="https://visionariosmagdalena.com/">visionariosmagdalena.com</a> <span style="font-weight:400;color:#5b5b5b;">(cliente)</span></div>
+        <div>Portal institucional del sistema CTeI del Magdalena con miras al 2040.</div>
+        <div class="proj-tech">WordPress · SEO Institucional</div>
+      </div>
+      <div class="proj">
+        <div class="proj-name">🏠 Elysium Construcciones — <a href="https://elysiumconstrucciones.com/">elysiumconstrucciones.com</a> <span style="font-weight:400;color:#5b5b5b;">(cliente)</span></div>
+        <div>Corporativo de arquitectura y construcción con portal inmobiliario.</div>
+        <div class="proj-tech">WordPress · Elementor · Real Estate</div>
+      </div>
+      <div class="proj">
+        <div class="proj-name">🥾 Trekking Santa Marta — <a href="https://trekkingsantamarta.com/">trekkingsantamarta.com</a> <span style="font-weight:400;color:#5b5b5b;">(cliente)</span></div>
+        <div>Operador turístico en la Sierra Nevada con reservas en línea.</div>
+        <div class="proj-tech">WordPress · WooCommerce · SEO Local</div>
+      </div>
+      <div class="proj">
+        <div class="proj-name">🌊 Grand Marina Suites — <a href="https://jesusdaconte.github.io/GrandMarina/">demo</a> <span style="font-weight:400;color:#5b5b5b;">(personal)</span></div>
+        <div>Apartasuites frente al mar con galería interactiva y reservas.</div>
+        <div class="proj-tech">HTML · CSS · JavaScript</div>
+      </div>
+      <div class="more">+ 4 proyectos: <a href="https://jesusdaconte.github.io/cv/portafolio.html">jesusdaconte.github.io/cv/portafolio.html</a></div>
+    </section>
+
+    <section>
+      <h2>Formación</h2>
+      <div class="job">
+        <div class="job-head">
+          <div class="job-role">Auxiliar en Análisis y Desarrollo</div>
+          <div class="job-date">2021 — 2022</div>
+        </div>
+        <div class="job-co">COTEMAG · <span class="job-loc">Santa Marta, Colombia</span></div>
+      </div>
+    </section>
+
+    <footer>
+      <span>jbdaconte@gmail.com · +57 300 471 2909</span>
+      <span>CV actualizado Sep 2026</span>
+    </footer>
+  </div>
+
+</div>
+</body>
+</html>

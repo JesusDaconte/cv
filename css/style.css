@@ -1107,3 +1107,60 @@ body > header.portfolio-hero {
                 opacity: 0.5;
             }
         }
+
+        /* Language switcher */
+        .lang-btn {
+            border: 1px solid var(--border);
+            color: var(--muted-foreground);
+            padding: 0.5rem 0.9rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            transition: all 0.2s;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .lang-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .lang-btn:focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+
+        /* Mobile language item lives inside the menu */
+        .mobile-lang {
+            display: none;
+        }
+
+        @media (max-width: 767px) {
+            nav .container .lang-btn {
+                display: none;
+            }
+
+            .mobile-lang {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+
+            .mobile-lang a {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                border: 1px solid var(--border);
+                border-radius: 9999px;
+                padding: 0.6rem 1.4rem;
+                font-weight: 700;
+                color: var(--primary);
+            }
+
+            .mobile-lang a::after {
+                display: none;
+            }
+        }

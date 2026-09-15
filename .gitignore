@@ -1,0 +1,10 @@
+# Sesiones y artefactos del navegador (playwright-cli)
+.playwright-cli/
+
+# Logs y temporales
+*.log
+/tmp/
+
+# Basura del sistema
+.DS_Store
+Thumbs.db
